@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tables</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+<h1>Akshat Tables:- </h1>
+<table>
+    <tr>
+        <th>PRO-ID</th>
+        <th>PRO-NAME</th>
+        <th>PRO-DESC</th>
+        <th>PRO-TYPE</th>
+    </tr>
+    {% for sh in sho %}
+    <tr>
+        <td>{{sh.proid}}</td>
+        <td>{{sh.proname}}</td>
+        <td>{{sh.prodisc}}</td>
+        <td>{{sh.protype}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="login"><button>login</button></form>
+</body>
+</html>

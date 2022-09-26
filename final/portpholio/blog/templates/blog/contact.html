@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block contactactive %}active{% endblock contactactive %}
+
+{% block body %}
+
+    <section class="comment" style="text-align: center;">
+        <div class="div-4">
+            <h4>comment</h4>
+            <form action="/comment_submit" method="get" >
+                <input type="text" style="width: 640px;height: 40px;font-size: 20px;margin-bottom: 10px;" name="name" id="name" placeholder="enter your name" class="inp-2"><br>
+                <input type="text" style="width: 640px;height: 40px;font-size: 20px;margin-bottom: 10px;" name="phone" id="phone" placeholder="enter your phone" class="inp-3"><br>
+                <input type="email" style="width: 640px;height: 40px;font-size: 20px;margin-bottom: 10px;" name="email" id="email" placeholder="enter your email" class="inp-4"><br>
+                <textarea name="text" style="width: 640px;margin-bottom: 10px;" id="text" cols="30" rows="10" placeholder="Elaborate your concern."></textarea><br>
+                <button class="btn btn-primary">Simbit</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock body %}
