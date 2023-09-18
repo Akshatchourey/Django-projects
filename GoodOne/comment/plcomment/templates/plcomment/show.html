@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<h1>Showing the information collected.</h1>
+{% for p in profile%}
+{{p.firstName}}<br>{{p.lastname}}<br>{{p.username}}<br>{{p.state}}<br>{{p.city}}<br>{{p.phoneNo}}<br><br>
+{% endfor %}
+</body>
+</html>

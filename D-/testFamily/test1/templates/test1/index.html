@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tree</title>
+</head>
+<body>
+Hallow World??
+{% load chartit %}
+{% block content %}
+    {{ chart|load_charts:"container" }}
+    <div id="container"></div>
+{% endblock %}
+</body>
+</html>
