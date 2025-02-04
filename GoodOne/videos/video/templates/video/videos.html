@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="button-1" ><a href="/playlists">playlist</a></button>
+
+    {% for v in videos %}
+    <div class="media">
+        <div class="media-body">
+            <!-- <img class="thumbnail" src="/static/{{v.thumbnail}}"> -->
+            <h3 class=""><a href="/video_playing/{{v.slug}}" class="text-dark">{{v.title}}</a></h3>
+            <br>{{bg.time}}<br>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
