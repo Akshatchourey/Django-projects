@@ -20,7 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     #  web application endpoint
     path('admin/', admin.site.urls),
-    path('', include('learn.urls')),
+    # path('', include('learn.urls')), # Leave empty path for now and focus on API Endpoints.
 
     # API endpoint
     path('api/v1/', include('learn.urls')),
