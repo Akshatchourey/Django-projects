@@ -24,4 +24,5 @@ urlpatterns = [
 
     # API endpoint
     path('api/v1/', include('learn.urls')),
+    path('api/v1/', include('blog.urls')),
 ]

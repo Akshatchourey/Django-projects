@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import get_object_or_404
 from .models import *
 from .serializers import StudentSerializer, EmployeeSerializer
+from .paginations import CustomPagination
 
 from rest_framework import status, viewsets
 from rest_framework.response import Response
@@ -52,8 +53,18 @@ def studentDetailView(request, pk):
 
 # class based views
 class Employees(APIView):
+    pagination_class = CustomPagination
+
     def get(self, request):
         employees = Employee.objects.all()
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(employees, request)
+
+        if page is not None:
+            serializer = EmployeeSerializer(page, many=True)
+            return paginator.get_paginated_response(serializer.data)
+
+        # Fallback if pagination is disabled
         serializer = EmployeeSerializer(employees, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
